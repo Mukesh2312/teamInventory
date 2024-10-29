@@ -1,0 +1,263 @@
+#createPurchaseOrder{
+    width: 95%;
+    max-width: 1920px;
+    margin: 1rem auto;
+    background: #fff;
+    border-radius: 7px;
+    padding-bottom: 10px;
+
+}
+.clientHead{
+    width: 100%;
+    text-align: center;
+
+}
+
+.clientHead {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+.clientHead img{
+    width: 100%;
+    object-fit: cover;
+    height: 8rem;
+    border-radius: 7px;
+
+}
+.heading{
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: left;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+#closeIcon{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+#closeIcon svg{
+    cursor: pointer;
+}
+
+/* form contaner start */
+#purchaseformContainer{
+    margin-top: 1rem;
+    padding: 10px 20px;
+}
+
+#purchaset{
+    border-collapse: collapse;
+}
+#purchaset td{
+    
+    border-collapse: collapse!important;
+}
+#dataRow td{
+    border-collapse: collapse!important;
+}
+#customTD{
+    display: flex;
+    justify-content: space-around;
+}
+#firstRow{
+    display: flex;
+    justify-content: space-between;
+}
+.pocontainer{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+#purchaseForm  label{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+
+
+}
+#shipadd, #shipadd2, #shipcity, #pcontact, #city,#cadd, select{
+     width: 50%; 
+     margin-bottom: 1rem; 
+    border-radius: 0;
+}
+#purchaseForm input{
+    font-size: 14px;
+    padding: 10px 0;
+    border: 1px solid rgb(198, 195, 195);
+}
+
+.purchaseInputInner{
+    display: flex;
+    justify-content: space-between;
+}
+#firstColHeading, #thirdRowHeading, #secondHeadCol{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+
+}
+.editableIinput{
+    border: none;
+}
+.editableIinput:focus-visible{
+    outline: none;
+}
+/* td{
+    border-collapse: collapse;
+} */
+
+#secondRow{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+#secondHeadCol, #firstColHeading{
+    margin-bottom: 2rem;
+}
+#customerName, #cname{
+    border-radius: 0!important;
+}
+#firstCol, #secondcol{
+    width: 50%;
+}
+
+#addNewRowBtn{
+    border: 2px solid #00B2FF;
+    color: #00B2FF;
+    background: transparent;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px;
+    margin-top: 1rem;
+
+    
+}
+#addNewRowBtn svg path{
+    fill: #00B2FF;
+}
+#thirdRow{
+    margin-top: 2rem;
+}
+#thirdRowHeading{
+    margin-bottom: 1rem;
+}
+/* form contaner end */
+
+/* terms and condition start */
+#termsNCon{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+#termHeading{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1rem;
+
+}
+
+#termFirst, #termSecond{
+    width: 50%;
+}
+#termFirst{
+    background: #D9D9D9;
+    padding: 10px;
+    line-height: 30px;
+}
+#termSecond{
+    line-height: 30px;
+}
+
+.netMount{
+width: 50%;
+margin: auto;
+display: flex;
+justify-content: space-between;
+}
+/* terms and condition end */
+
+#athoriseSignContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    
+}
+#authFirstHeading{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.authlbl{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+#authFirst, #authSecond{
+    width: 50%;
+}
+.authInputContainer{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 2rem; */
+    /* align-items: center; */
+    margin-bottom: .5rem;
+}
+#authcontact, #authmail, #dasig,#authname  {
+    width: 60%;
+}
+
+
+#authSecond{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+#purchaseOrderSubmitbtn{
+    /* background-color: #00B2FF; */
+    background: #56AAC5;
+
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    color: #fff;
+
+}
+#authCancelBtn{
+    background: #56AAC5;
+
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    color: #fff;
+
+}

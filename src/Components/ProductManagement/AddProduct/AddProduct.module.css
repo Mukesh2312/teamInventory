@@ -1,0 +1,323 @@
+
+#addProduct{
+    width: 100%;
+    max-width: 1920px;
+    margin: auto ;
+    padding-bottom: 1rem;
+}
+#addProduct h2{
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: left;
+
+}
+#addProduct .clientHead{
+    width: 100%;
+    text-align: center;
+
+}
+
+#addProduct .clientHead {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+#addProduct .clientHead img{
+    width: 100%;
+    object-fit: cover;
+    height: 8rem;
+    border-radius: 7px;
+
+}
+.heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+#closeIcon{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+#closeIcon svg{
+    cursor: pointer;
+}
+
+/* form css started */
+#topInput{
+    display: flex;
+    justify-content: space-between;
+}
+#pFormContainer{
+    width: 80%;
+    margin: auto;
+}
+
+#headRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+#srno, #pdate{
+    border: none;
+    border-bottom: 1px solid black
+    ;
+    border-radius: 0;
+    padding: 0;
+}
+#belowHeadRow{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* top details of the form */
+#firstcol, #secondCol{
+    width: 50%;
+}
+.formItems{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.formItems label{
+    width: 30%;
+}
+.formItems  input, select {
+    width: 70%;
+    border-radius: 15px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid rgb(198, 195, 195);
+}
+.lbl{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+
+}
+#amcDuration{
+    justify-content: flex-end;
+    gap: 0!important;
+}
+
+#pimg{
+    border: none;
+}
+
+.fileSpecs{
+    line-height: 25px;
+}
+.descLbl{
+    margin-bottom: 1rem;
+}
+#pdesc{
+    width: 95%!important;
+}
+/* top details of the form */
+
+/* product and pricing start*/
+    #productPricingContainer{
+        margin-top: 1.5rem;
+    }
+#productPricingContainer p{
+    margin-bottom: 1rem;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+.pnp{
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 15rem;
+    border: 1px solid rgb(198, 195, 195)!important;
+    margin-top: 10px;
+
+}
+/* product and pricing end */
+
+/* Documentation start*/
+#documentation{
+    margin-top: 1.5rem;
+
+}
+#documentation p{
+    margin-bottom: 1rem;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+#cletter, #ppt, #brochure, #isocertificate{
+    margin-top: 1rem;
+}
+/* Documentation end*/
+
+
+/* technical specification start */
+#technical{
+    margin-top: 1.5rem;
+}
+#technical p{
+    margin-bottom: 1rem;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+#techTextArea{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+
+}
+
+#techInfo{
+    display: flex;
+    justify-content: space-around;
+}
+
+#dimension, #material, #performance{
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 15rem;
+    border: 1px solid rgb(198, 195, 195)!important;
+}
+/* technical specification end */
+
+
+/*cost estimation start  */
+#costEstimation{
+    margin-top: 1.5rem;
+}
+#constHeading{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+/*cost estimation end  */
+#amcDuration{
+    display: flex;
+    gap: 20px;
+}
+#descRow{
+    display: flex;
+    margin-top: 1rem 0;
+}
+#productPricing{
+    display: flex;
+    justify-content: space-between;
+}
+.docContainer{
+    display: flex;
+    gap: 20px;
+}
+
+#billRow{
+    display: flex;
+}
+#addProductBillTable tr{
+    margin-bottom: 10px;
+}
+#addProductBillTable td{
+    text-align: center;
+}
+#apliTx{
+    display: flex;
+}
+#txPartition{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+#txAmtPartition{
+    display: flex;
+    justify-content: space-around;
+    /* text-align: center; */
+}
+#billRow{
+    margin-top: 1rem;
+}
+#billRow table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+#netamount{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-end;
+}
+#netamountInner{
+    width:20rem ;
+}
+.netItem{
+    display: flex;
+    gap: 1rem;
+}
+.netItem p:first-child{
+    width: 45%;
+}
+.netItem p:nth-child(2){
+    width: 55%;
+    text-align: start;
+    padding-left: 4rem;
+}
+
+
+
+
+/* form css end*/
+
+#approvedBy{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    line-height: 27px;
+
+}
+#approveInner p:first-child{
+    margin-bottom: 1rem;
+}
+.formBtnContainer{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 4rem 0 2rem;
+}
+.formBtnContainer button{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    
+}
+.formBtnContainer button{
+    background-color: #56AAC5;
+}
+/* .formBtnContainer button[type="submit"]{
+    padding: 0px 30px;
+} */
+.editBtn button{
+    background-color: #7BF9C4;
+    border: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    
+}

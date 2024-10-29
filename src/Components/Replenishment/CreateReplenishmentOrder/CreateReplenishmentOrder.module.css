@@ -1,0 +1,112 @@
+#bgImageContainer{
+    height: 5rem;
+    width: 100%;
+}
+#bgImageContainer img{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+#popupHeading{
+    position: absolute;
+    color: #000;
+    top: 28px;
+    left: 19px;
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    
+}
+#repId{
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: left;
+    padding: 10px 22px;
+    color: #000;
+    margin-bottom: 2rem;
+
+}
+.frmDataContainer{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+.repLabel{
+    width: 80%;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+.repLabel label{
+    font-family: Lexend;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: right;
+    color: #000;
+
+}
+.lblcontainer{
+    width: 30%;
+    text-align: end;
+}
+#productId, #product, #quantity {
+    border: 1px solid #D5D9DD;
+    box-shadow: 1px 2px 4px 0px #00000040;
+    width: 70%;
+
+}
+#repAmount{
+    margin-top: 1.5rem;
+    padding-right: 1rem;
+}
+#repAmtInnerContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+#repAmtInnerContainer label{
+    font-family: Lexend;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.25px;
+    text-align: left;
+    color: #000;
+}
+#repamount{
+    border-bottom: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+
+}
+#repOrderBtn{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-right: 4rem;
+}
+#repOrderBtn button{
+    font-family: Lexend;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12.5px;
+    text-align: left;
+    padding: 6px 30px;
+    color: #000;
+    border-radius: 2px;
+    
+}
+#repOrderBtn button:first-child{
+    background: #56AAC5;
+    box-shadow: 1px 2px 4px 0px #00000040;
+    color: #fff;
+
+}
+#repOrderBtn button:last-child{
+    box-shadow: 1px 2px 4px 0px #00000040;
+
+}

@@ -1,0 +1,255 @@
+#replenishment{
+    width: 95%;
+    max-width: 1920px;
+    margin: 1rem auto;
+    background: #fff;
+    border-radius: 7px;
+    padding: 10px;
+}
+#repHeading{
+    font-family: Lexend, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    padding: 20px 30px
+
+}
+#repContentContainer{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+/* left content css start */
+#leftContent{
+    width: 20%;
+}
+#repdate{
+    border: none;
+    border-bottom: 1px solid;
+}
+#repHeadDate{
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align  : right;
+    margin-bottom: 2rem;
+
+}
+#repProduct, #repProductId, #repProductStatus{
+    font-family: Lexend;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding-left: 10px;
+}
+.prdVal{
+    font-family: Lexend;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22.5px;
+
+}
+#inStock, #outOfStock, #thumb{
+    margin-bottom: 1rem;
+    width: 100%;
+    font-family: Lexend;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+}
+#inStock{
+    color: greenyellow;
+}
+#outOfStock{
+    color: red;
+}
+.stockVal{
+    color: #000;
+}
+
+.leftBox{
+    border: 1px solid #0000002e;
+    border-radius: 7px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    width: 96%;
+    padding:  10px;
+}
+.leftBoxIcon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0  10px;
+}
+.stockTitle{
+    margin-bottom: 1rem;
+}
+/* left content css end */
+
+/* right content css start */
+#rightContent{
+    text-align: start;
+    width: 80%;
+
+}
+#rightTopContent{
+    box-shadow: 0px 4px 4px 4px #00000040;
+    width: 98%;
+    padding: 5px;
+    margin-bottom: 1rem;
+
+}
+#rightHeader{
+    font-family: Lexend, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+  
+
+}
+#tpSellingActionBtn{
+    display: flex;
+    justify-content: space-between  ;
+    padding-top: 1.5rem;
+    width: 93%;
+}
+#otherActionsBtn{
+    display: flex;
+    gap: 3rem;
+}
+.repBtn{
+    font-family: Lexend;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgb(194, 191, 191);
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 0px 15px;
+
+}
+#exportBtn{
+    background: #56AAC5;
+    color: #fff;
+}
+
+#topSellingTableContianer{
+    margin-top: 1rem;
+}
+
+/* table */
+.tableContainer{
+    width: 100%;
+}
+.tableContainer table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.dataItemContainer{
+    display: flex;
+}
+
+.theding th{
+    text-align: start;
+    padding: 10px 3px;
+    color: #00000087;
+    font-family: Lexend, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.25px;
+    text-align: left;
+
+}
+/* .theding thead tr{
+    border-bottom: 2px solid #00000026;
+} */
+
+
+.theding tbody td{
+    padding: 4px;
+    font-family: Lexend;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.25px;
+    text-align: left;
+
+
+}
+.actionBtn{
+    font-family: lexend, sans-serif;
+    font-weight: 400;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    /* border: none; */
+    cursor: pointer;
+    background: transparent;
+}
+
+.instock {
+    color: #05950B;
+  }
+  
+  .lowstock {
+    color: #B4A51A;
+  }
+  
+  .outofstock {
+    color: #FF0000;
+  }
+
+  .instock, .lowstock, .outofstock{
+    font-family: Lexend;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16.25px;
+    text-align: left;
+  }
+  
+/* table */
+/* right content css end */
+
+#rightBottomContent{
+    box-shadow: 0px 4px 4px 4px #00000040;
+    width: 98%;
+    padding: 5px;
+}
+.chartHeading{
+    font-family: Lexend, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+
+}
+#repCreateBtn{
+    font-family: Lexend;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    display: flex;
+    gap: .5rem;
+    background-color: #56AAC5;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+}
+#chartHeader{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+
+

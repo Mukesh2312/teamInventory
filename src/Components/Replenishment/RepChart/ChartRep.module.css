@@ -1,0 +1,48 @@
+.chartContainer {
+    margin: 0 auto;
+    padding: 5px 20px;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    background-color: #fff;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .info h2 {
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    
+  }
+  
+  .percentage {
+    color: red;
+    font-size: 16px;
+  }
+  .timeRangeToggle button {
+    margin-right: 10px;
+    font-size: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+  
+  .timeRangeToggle .active {
+    color: #007bff;
+    font-weight: 700;
+  }
+  
+  #canvaContainer canva{
+      height: 350px;
+      width: 750px;
+  }
+  

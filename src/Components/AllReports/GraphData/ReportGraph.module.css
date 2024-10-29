@@ -1,0 +1,62 @@
+.reportDashboard{
+    width: 100%;
+    padding-left: 3rem;
+    background: #fff;
+    
+}
+.chartRow{
+    width: 100%;
+
+}
+.full-width {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.chartRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 300px;
+    justify-content: center;
+
+}
+
+.chartRow:first-child{
+    height: 180px;
+}
+/* .chartRow div canvas{
+    width: 900px;
+    height: 350px;
+} */
+/* .dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .chartRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .chartRow div {
+    width: 48%;  /* Adjust to fit two charts side by side */
+  /* }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .chartRow div canvas {
+    max-width: 100%;
+  } */

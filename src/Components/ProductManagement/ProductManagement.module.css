@@ -1,0 +1,181 @@
+#productMng{
+    width: 95%;
+    max-width: 1920px;
+    margin: 1rem auto;
+    padding: 10px;
+    /* border: 1px solid; */
+    background: #fff;
+    border-radius: 7px;
+   
+}
+h2{
+   text-align: center;
+}
+
+.headContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Lexend, sans-serif;
+    margin-bottom: 1rem;
+
+}
+
+.headContent button{
+    padding: 10px 20px;
+    border: 1px solid #1A6A85;
+    background: #CBE5ED;
+    font-family: Lexend;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    border-radius: 7px;
+
+}
+.productStatus{
+    display: flex;
+    gap: 10px;
+}
+.prdItem, .topSellingItems{
+    width: 33.33%;
+    height: 15rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.prdItem, .topSellingItems {
+    font-family: Lexend, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    /* line-height: 27.5px; */
+    text-align: left;
+
+}
+.stockList{
+    font-family: Lexend;
+    font-size: 22px;
+    font-weight: 300;
+    /* line-height: 27.5px; */
+    text-align: left;
+    
+}
+.prHeading{
+    margin-bottom: 1rem;
+}
+.stockList div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.rqrdItm img , .tsImg img{
+    width: 50px;
+}
+ .tsImg p, .rqrdItm p, .requiredItem p{
+    font-family: Lexend;
+    font-size: 13.92px;
+    font-weight: 500;
+    /* line-height: 17.4px; */
+    text-align: left;
+
+}
+.rqrdItm{
+    display: flex;
+    gap: 10px;
+}
+.tsImg{
+    display: flex;
+    gap: 1rem;
+}
+.requiredItem{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+/* search  */
+.searchContainer{
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+.searchContainer input{
+    width: 30rem;
+    padding:10px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    font-family: Lexend;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: left;
+
+}
+.filContainer {
+    padding: 5px 6px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.filContainer svg{
+    width: 20px;
+    height: 20px;
+}
+/* search  */
+
+/* table */
+.tableContainer{
+    width: 100%;
+}
+.tableContainer table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.dataItemContainer{
+    display: flex;
+}
+
+.theding th{
+    text-align: start;
+    padding: 20px;
+    color: #00000087;
+}
+.theding thead tr{
+    border-bottom: 2px solid #00000026;
+}
+
+.theding tbody tr{
+    border-bottom: 1px solid #00000026;
+    
+}
+.theding tbody td{
+    padding: 20px;
+
+}
+.actionBtn{
+    font-family: lexend, sans-serif;
+    font-weight: 400;
+    background-color: #56AAC5;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    /* border: none; */
+    cursor: pointer;
+}
+.actionBtn{
+    color: #fff;
+}
+
+/* table */

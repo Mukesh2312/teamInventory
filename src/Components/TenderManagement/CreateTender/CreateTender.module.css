@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+#createClient{
+    width: 95%;
+    max-width: 1920px;
+    margin: 1rem auto;
+    background: #fff;
+    border-radius: 7px;
+    padding-bottom: 1rem;
+}
+.clientHead{
+    width: 100%;
+    text-align: center;
+}
+
+.clientHead {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+.clientHead img{
+    width: 100%;
+    object-fit: cover;
+    height: 8rem;
+    border-radius: 7px;
+
+}
+.heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* form css started*/
+.formInnercontainer{
+    width: 95%;
+    margin: 1rem auto;
+}
+.heading{
+    font-weight: 600;
+    font-size: 30px;
+}
+.formInnercontainer label{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.srnoFild{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+.srnoFild label{
+    margin-right: 15px;
+}
+.businessDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.businessDetails > div {
+    display: flex;
+    justify-content: space-between;
+}
+.businessDetails  input, textarea, select{
+    width: 70%;
+    border-radius: 5px;
+    border: 1px solid #00000045;
+    font-size: 18px;
+}
+
+/* product details */
+.productDetailsContainer{
+    flex-direction: column;
+    /* padding-top: 1rem; */
+}
+.tenderProductDetails{
+    display: flex;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+.tenderProductDetails > div{
+    width: 16.6%;
+}
+.tenderProductDetails  input {
+    width: 100%!important;
+}
+/* product details */
+
+.inputFilesContainer{
+    width: 100%;
+    margin-top: 3rem;
+   
+}
+.innerInputFilecontainer{
+    
+    display: flex;
+    justify-content: flex-end;
+   
+}
+.innerInputFilecontainer small {
+    font-size: 13px;
+    color: #00000070;
+    font-weight: 500;
+}
+.innerInputFilecontainer div{
+    line-height: 40px;
+}
+/* input[type="file"]{
+    display: none;
+} */
+
+.techSpec{
+    margin-top: 2rem;
+}
+.formBtnContainer{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 4rem 0 2rem;
+}
+.formBtnContainer button{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    
+}
+.formBtnContainer button{
+    background-color: #56AAC5;
+}
+.formBtnContainer button[type="submit"]{
+    padding: 0px 30px;
+}
+
+.hsnContainer > div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#techText{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+/* .formBtnContainer{
+   
+} */
+ .personContainer{
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+ }
+.personContainer > div{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-end;
+
+
+}
+.personContainer input {
+    width: 35%;
+    border: 1px solid #80808061;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.editBtn button{
+    background-color: #7BF9C4;
+    border: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    
+}
+/* form css ended*/
+

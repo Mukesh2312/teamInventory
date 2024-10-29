@@ -1,0 +1,33 @@
+/* popup */
+#popup{
+   position: absolute;
+   width: 100%;
+   top: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, .5);
+   height: 100vh;
+   z-index: 1000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* filter: blur(2px); */
+
+   
+}
+
+#popupContent > div{
+   cursor: pointer;
+   text-align: end;
+   margin-bottom: 1rem;
+}
+#popupContent svg{
+   color: #fff;
+}
+
+#popupContent img{
+   width: 30rem;
+   height: 35rem;
+
+}
+/* popup */
+

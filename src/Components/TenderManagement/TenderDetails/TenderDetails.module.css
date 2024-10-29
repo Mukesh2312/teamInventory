@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+#tenderDetailes{
+    width: 95%;
+    max-width: 1920px;
+    margin: 1rem auto;
+    background: #fff;
+    border-radius: 7px;
+}
+.tenderHead{
+    width: 100%;
+    text-align: center;
+}
+
+.tenderHead {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+.tenderHead img{
+    width: 100%;
+    object-fit: cover;
+    height: 8rem;
+    border-radius: 7px;
+
+}
+.heading{
+    font-family: Inter, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+/* tender details started*/
+.detailContainer{
+    width: 100%;
+    margin:1rem  auto;
+}
+.detailInerContainer{
+    width: 95%;
+    margin: auto;
+}
+.item{
+    display: flex;
+    gap: 4rem;
+    margin-bottom: .5rem;
+}
+.itemName{
+    font-size: 15px;
+    font-weight: 500;
+}
+.itemContent{
+    width: 50%;
+    
+ }
+ .itemName{
+    width: 32%!important;
+ }
+ .itemVal{
+    color: #494949;
+    
+ }
+ 
+ .authInnerContainer{
+    display: flex;
+    margin-bottom: 1rem;
+
+ }
+ .authInnerContainer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+ }
+ .personPost{
+    width: 20%;
+    font-size: 16px;
+    font-weight: 500;
+ }
+
+ .personName{
+      color: #494949;;
+ }
+ 
+ .AuthPersonDetails{
+    padding: 0 30px;
+ }
+/* tender details end*/
+
+
+ /* form btn container */
+ .formBtnContainer{
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    padding: 4rem 0 2rem;
+    padding: 4rem 2rem 2rem;
+}
+.formBtnContainer button{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    
+}
+.formBtnContainer button{
+    background-color: #56AAC5;
+}
+.editBtn{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 12px 2rem;
+}
+
+ .editBtn button{
+    background-color: #7BF9C4;
+    border: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    
+}
+.editBtn button:nth-child(2){
+    background-color: #FFCFCF;
+}
+ /* form btn container */
+

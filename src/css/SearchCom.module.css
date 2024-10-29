@@ -1,0 +1,26 @@
+.searchInnerContainer{
+    width: max-content;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    padding: 5px 15px;
+
+}
+.searchInnerContainer input{
+    padding: 10px 20px;
+    border: none;
+    /* height: 100%; */
+    width: 20rem;
+}
+.searchInnerContainer input:focus-visible{
+    /* border: none; */
+    outline: none;
+}
+.searchInnerContainer button{
+    border: none;
+    cursor: pointer;
+    background: transparent;
+
+}

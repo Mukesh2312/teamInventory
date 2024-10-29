@@ -1,0 +1,147 @@
+#billTemplatePurchase{
+    width: 95%;
+    max-width: 1920px;
+    margin: 1rem auto;
+    background: #fff;
+    border-radius: 7px;
+    padding: 10px;
+}
+#billTbl{
+    width: 100%;
+}
+
+
+#billTemplatePurchase table, .billTd, .billth{
+    border-collapse: collapse;
+    border: 1px solid;
+}
+.billTd{
+    padding: 5px 15px;
+}
+.billth{
+    padding: 10px 15px;
+}
+#billHeader{
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 700;
+  text-align: center;
+}
+.secondRowContent{
+    font-family: Inter;
+    font-size: 13.92px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+}
+.poOrder{
+    margin-bottom: .5rem;
+}
+.mainTblTd{
+    height: 150px;
+    min-height: 150px;
+}
+.mdlTbRow{
+    height: 80px;
+}
+.inWordsRow{
+    font-family: Inter;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 19px;
+    height: 60px;
+
+}
+.lstRowDetails{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: left;
+    margin-bottom: 12px;
+
+}
+.lstHeader{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: left;
+}
+.lstRowHead{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+
+}
+.lstRowDetail{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: left;
+}
+#purchaseSign{
+    /* display: flex; */
+    vertical-align: baseline;
+    padding-top: 23px;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* purchase action buttons start */
+
+#purchaseBillActionBtns{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+.printAndEdit{
+    display: flex;
+    gap: 1rem;
+}
+.edit, .print{
+    padding: 6px 12px;
+    border: none;
+}
+.edit{
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #7BF9C4;
+    border-radius: 5px;
+}
+.print{
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #FFCFCF;
+    border-radius: 5px;
+}
+.okAndCancel{
+    display: flex;
+    gap: 2rem;
+}
+.okBtn, .cancelBtn{
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #56AAC5;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.okBtn{
+    padding: 8px 24px;
+}
+.cancelBtn{
+    padding: 8px 12px;
+}
+/* {
+   
+} */
+/* purchase action buttons start */

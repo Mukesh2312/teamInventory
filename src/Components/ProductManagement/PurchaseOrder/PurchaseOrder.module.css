@@ -1,0 +1,124 @@
+#purchaseOrder{
+    width: 95%;
+    max-width: 1920px;
+    margin: 1rem auto;
+    background: #fff;
+    border-radius: 7px;
+    padding: 10px;
+}
+#headerContainer{
+    border-radius: 7px;
+    margin-bottom: 1rem;
+
+}
+#purchaseHeading{
+    font-family: Montserrat, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+#headerBtns{
+    display: flex;
+    justify-content: space-between;
+}
+#allBtn{
+    background: transparent;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: left;
+    padding: 5px 18px;
+
+}
+#createPbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 7px;
+    padding: 5px 15px;
+    background: #B6DAE6B5;
+    border: 1px solid #1A6A85;
+    font-family: Inter;
+    font-size: 9.83px;
+    font-weight: 500;
+    margin-right: 1rem;
+    
+
+}
+#rightBtns{
+    display: flex;
+    gap: 10px;
+}
+
+.quickBtn{
+   padding: 5px 10px;
+    display: grid;
+    place-content: center;
+    background: transparent;
+    border: none;
+    box-shadow: 1px 3px 3px #888181;
+    border-radius: 5px;
+
+}
+
+
+/* purchased order table start */
+
+.tableContainer{
+    width: 100%;
+}
+.tableContainer table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.dataItemContainer{
+    display: flex;
+}
+
+.theding th{
+    text-align: start;
+    padding: 20px;
+    color: #00000087;
+}
+.theding thead tr{
+    border-bottom: 2px solid #00000026;
+}
+
+.theding tbody tr{
+    border-bottom: 1px solid #00000026;
+    
+}
+.theding tbody td{
+    padding: 20px;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+
+
+}
+#firstTD{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+
+}
+
+.actionBtn{
+    font-family: lexend, sans-serif;
+    font-weight: 400;
+    background-color: #56AAC5;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    /* border: none; */
+    cursor: pointer;
+    color: #fff;
+}
+
+/* purchased order table end */
