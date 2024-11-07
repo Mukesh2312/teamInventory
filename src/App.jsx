@@ -5,9 +5,8 @@ import WaereHouse from "./Components/WareHouse";
 import Dashboard from "./Components/Dashboard";
 import VendorManagement from "./Components/VendorManagement";
 import Inventory from "./Components/Inventory";
-import ProductDetails from "./Components/ProductDetails";
+// import ProductDetails from "./Components/ProductDetails";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Details from "./Components/Details";
 import InventoryTracking from "./Components/InventaryTracking";
 import InventoryTrackingPage from "./Components/InventoryTrackingPage";
 import EditOrderStatus from "./Components/EditOrderStatus";
@@ -20,6 +19,9 @@ import ClientDetails from "./Components/ClientManagement/ClientDetails/ClientDet
 
 import ProductManagement from "./Components/ProductManagement/ProductManagement";
 import AddProduct from "./Components/ProductManagement/AddProduct/AddProduct";
+import ProductDetails from "./Components/ProductDetails";
+import Details from "./Components/Details";
+
 import PurchaseOrder from "./Components/ProductManagement/PurchaseOrder/PurchaseOrder";
 import CreatePurchaseOrder from "./Components/ProductManagement/CreatePurchaseOrder/CreatePurchaseOrder";
 import PurchaseOrderBill from "./Components/PurchaseOrderBill/PurchaseOrderBill";
@@ -77,7 +79,7 @@ function App() {
               />
 
               <Route path="/ProductDetails" element={<ProductDetails />} />
-              <Route path="/Details" element={<Details />} />
+              {/* <Route path="/Details" element={<Details />} /> */}
               <Route path="/WareHouse" element={<WaereHouse />} />
               <Route path="/VendorManagement" element={<VendorManagement />} />
               <Route path="/create-vendor" element={<VendorForm />} />
@@ -96,6 +98,8 @@ function App() {
 
               <Route path="/product" element={<ProductManagement />} />
               <Route path="/add-product" element={<AddProduct />} />
+              <Route path="/product-details" element={<ProductDetails />} />
+              <Route path="/details" element={<Details />} />
 
               <Route path="/purchase-order" element={<PurchaseOrder />} />
               <Route

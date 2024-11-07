@@ -78,7 +78,7 @@ const AddProduct = () => {
                     <label htmlfor="pname" className={stl.lbl}>
                       Product Name:
                     </label>
-                    <select name="pname" id="pname">
+                    <select name="pname" id={stl.pname}>
                       <option value="dell">Dell</option>
                       <option value="hp">HP</option>
                       <option value="lenovo">Lenovo</option>
@@ -100,7 +100,7 @@ const AddProduct = () => {
                     <label htmlfor="ptype" className={stl.lbl}>
                       Product Type :
                     </label>
-                    <select name="ptype" id="ptype">
+                    <select name="ptype" id={stl.ptype}>
                       <option value="dell">Dell</option>
                       <option value="hp">HP</option>
                       <option value="lenovo">Lenovo</option>
@@ -260,7 +260,7 @@ const AddProduct = () => {
               <div id={stl.documentation}>
                 <p>Documentation</p>
                 <div className={stl.docContainer}>
-                  <div>
+                  <div className={stl.itemDoc}>
                     <label htmlFor="brochure" className={stl.lbl}>
                       Product Brochure :
                     </label>
@@ -273,7 +273,7 @@ const AddProduct = () => {
                       </small>
                     </div>
                   </div>
-                  <div>
+                  <div className={stl.itemDoc}>
                     <label htmlFor="ppt" className={stl.lbl}>
                       PPT Available :
                     </label>
@@ -286,7 +286,7 @@ const AddProduct = () => {
                       </small>
                     </div>
                   </div>
-                  <div>
+                  <div className={stl.itemDoc}>
                     <label htmlFor="cletter" className={stl.lbl}>
                       Covering Latter :
                     </label>
@@ -299,7 +299,7 @@ const AddProduct = () => {
                       </small>
                     </div>
                   </div>
-                  <div>
+                  <div className={stl.itemDoc}>
                     <label htmlFor="isocertificate" className={stl.lbl}>
                       ISO Certificate :
                     </label>

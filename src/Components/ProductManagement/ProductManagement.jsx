@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import stl from "./ProductManagement.module.css";
 import FilterIcon from "../IconComponents/FilterIcon";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useUser } from "../UserContext";
+import axios from "axios";
 
 function ProductManagement() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    handleProduct();
+  }, []);
+  const handleProduct = async () => {
+    try {
+      const res = await axios.get(
+        "https://erp-inventery-node-js.onrender.com/api/products/search"
+      );
+      const data = res.data;
+      // console.log(data);
+      setProducts(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  // get product by id
+  const { setProduct } = useUser();
+  const getProduct = async (id) => {
+    try {
+      const res = await axios.get(
+        `https://erp-inventery-node-js.onrender.com/api/products/${id}`
+      );
+
+      const data = res.data;
+      // console.log(data);
+      setProduct(data); //updatig global state
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
-      <Outlet />
       {/* <h2>Product Management</h2> */}
       <div id={stl.productMng}>
         <div className={stl.headContent}>
@@ -110,26 +142,30 @@ function ProductManagement() {
                 </thead>
 
                 <tbody>
-                  {products?.map((item, index) => {
-                    return (
-                      <tr key={index}>
-                        <td>{item.productName}</td>
-                        <td>{item.code}</td>
-                        <td>{item.itemGroup}</td>
-                        <td>{item.lastPurchase}</td>
-                        <td>{item.quantityUnit}</td>
-                        <td>{item.price}</td>
+                  {products &&
+                    products.map((item) => {
+                      return (
+                        <tr key={item._id}>
+                          <td>{item.productName}</td>
+                          <td>{item.skuCode}</td>
+                          <td>{item.itemGroup}</td>
+                          <td>{item.lastPurchase}</td>
+                          <td>{item.quantityUnit}</td>
+                          <td>{item.price}</td>
 
-                        <td>
-                          <Link>
-                            <button className={stl.actionBtn}>
-                              View Details
-                            </button>
-                          </Link>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                          <td>
+                            <Link to="/details">
+                              <button
+                                className={stl.actionBtn}
+                                onClick={() => getProduct(item._id)}
+                              >
+                                View Details
+                              </button>
+                            </Link>
+                          </td>
+                        </tr>
+                      );
+                    })}
                 </tbody>
               </table>
             </div>
@@ -142,85 +178,85 @@ function ProductManagement() {
 
 export default ProductManagement;
 
-let products = [
-  {
-    productName: "Laptop",
-    code: "LP1001",
-    itemGroup: "Electronics",
-    lastPurchase: "2024-09-15",
-    quantityUnit: "pcs",
-    price: 1500,
-  },
-  {
-    productName: "Office Chair",
-    code: "OC2001",
-    itemGroup: "Furniture",
-    lastPurchase: "2024-08-20",
-    quantityUnit: "pcs",
-    price: 300,
-  },
-  {
-    productName: "Printer Paper",
-    code: "PP3001",
-    itemGroup: "Stationery",
-    lastPurchase: "2024-09-01",
-    quantityUnit: "reams",
-    price: 25,
-  },
-  {
-    productName: "Mouse",
-    code: "MS4001",
-    itemGroup: "Electronics",
-    lastPurchase: "2024-10-05",
-    quantityUnit: "pcs",
-    price: 50,
-  },
-  {
-    productName: "Desk Lamp",
-    code: "DL5001",
-    itemGroup: "Furniture",
-    lastPurchase: "2024-07-10",
-    quantityUnit: "pcs",
-    price: 75,
-  },
-  {
-    productName: "Notebook",
-    code: "NB6001",
-    itemGroup: "Stationery",
-    lastPurchase: "2024-09-25",
-    quantityUnit: "pcs",
-    price: 5,
-  },
-  {
-    productName: "Keyboard",
-    code: "KB7001",
-    itemGroup: "Electronics",
-    lastPurchase: "2024-09-05",
-    quantityUnit: "pcs",
-    price: 80,
-  },
-  {
-    productName: "Desk Organizer",
-    code: "DO8001",
-    itemGroup: "Furniture",
-    lastPurchase: "2024-08-18",
-    quantityUnit: "pcs",
-    price: 20,
-  },
-  {
-    productName: "Pen",
-    code: "PN9001",
-    itemGroup: "Stationery",
-    lastPurchase: "2024-10-01",
-    quantityUnit: "packs",
-    price: 12,
-  },
-  {
-    productName: "Headphones",
-    code: "HP1001",
-    itemGroup: "Electronics",
-    lastPurchase: "2024-09-29",
-    quantityUnit: "pcs",
-    price: 120,
-  },
-];
+// let products = [
+//   {
+//     productName: "Laptop",
+//     code: "LP1001",
+//     itemGroup: "Electronics",
+//     lastPurchase: "2024-09-15",
+//     quantityUnit: "pcs",
+//     price: 1500,
+//   },
+//   {
+//     productName: "Office Chair",
+//     code: "OC2001",
+//     itemGroup: "Furniture",
+//     lastPurchase: "2024-08-20",
+//     quantityUnit: "pcs",
+//     price: 300,
+//   },
+//   {
+//     productName: "Printer Paper",
+//     code: "PP3001",
+//     itemGroup: "Stationery",
+//     lastPurchase: "2024-09-01",
+//     quantityUnit: "reams",
+//     price: 25,
+//   },
+//   {
+//     productName: "Mouse",
+//     code: "MS4001",
+//     itemGroup: "Electronics",
+//     lastPurchase: "2024-10-05",
+//     quantityUnit: "pcs",
+//     price: 50,
+//   },
+//   {
+//     productName: "Desk Lamp",
+//     code: "DL5001",
+//     itemGroup: "Furniture",
+//     lastPurchase: "2024-07-10",
+//     quantityUnit: "pcs",
+//     price: 75,
+//   },
+//   {
+//     productName: "Notebook",
+//     code: "NB6001",
+//     itemGroup: "Stationery",
+//     lastPurchase: "2024-09-25",
+//     quantityUnit: "pcs",
+//     price: 5,
+//   },
+//   {
+//     productName: "Keyboard",
+//     code: "KB7001",
+//     itemGroup: "Electronics",
+//     lastPurchase: "2024-09-05",
+//     quantityUnit: "pcs",
+//     price: 80,
+//   },
+//   {
+//     productName: "Desk Organizer",
+//     code: "DO8001",
+//     itemGroup: "Furniture",
+//     lastPurchase: "2024-08-18",
+//     quantityUnit: "pcs",
+//     price: 20,
+//   },
+//   {
+//     productName: "Pen",
+//     code: "PN9001",
+//     itemGroup: "Stationery",
+//     lastPurchase: "2024-10-01",
+//     quantityUnit: "packs",
+//     price: 12,
+//   },
+//   {
+//     productName: "Headphones",
+//     code: "HP1001",
+//     itemGroup: "Electronics",
+//     lastPurchase: "2024-09-29",
+//     quantityUnit: "pcs",
+//     price: 120,
+//   },
+// ];

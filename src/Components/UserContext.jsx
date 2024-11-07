@@ -6,6 +6,7 @@ export const UserProvider = ({ children }) => {
   const [updateVendor, setUpdateVendor] = useState({});
   const [client, setClient] = useState({});
   const [tenderDetails, setTenderDetails] = useState({});
+  const [product, setProduct] = useState({});
 
   const obj = {
     updateVendor,
@@ -14,6 +15,8 @@ export const UserProvider = ({ children }) => {
     setClient,
     tenderDetails,
     setTenderDetails,
+    product,
+    setProduct,
   };
 
   return <UserContext.Provider value={obj}>{children}</UserContext.Provider>;

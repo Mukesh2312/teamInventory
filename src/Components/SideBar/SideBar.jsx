@@ -48,7 +48,7 @@ const SideBar = () => {
                 <Link to="/inventory">All Inventory</Link>
               </li>
               <li>
-                <Link to="/InventoryTrackingPage">Inventory Tracking</Link>
+                <Link to="/InventoryTracking">Inventory Tracking</Link>
               </li>
               <li>
                 <Link to="/QuotationPage">Quotation</Link>

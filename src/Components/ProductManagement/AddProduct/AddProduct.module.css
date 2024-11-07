@@ -1,9 +1,10 @@
 
 #addProduct{
-    width: 100%;
+    width: 95%;
     max-width: 1920px;
-    margin: auto ;
+    margin: auto;
     padding-bottom: 1rem;
+    background-color: #fff;
 }
 #addProduct h2{
     font-family: Inter;
@@ -52,7 +53,7 @@
     justify-content: space-between;
 }
 #pFormContainer{
-    width: 80%;
+    width: 95%;
     margin: auto;
 }
 
@@ -110,8 +111,14 @@
     border: none;
 }
 
+#pname, #pmodal, #ptype, #pmc, #prscmnpy{
+    border-radius: 15px;
+    font-size: 14px;
+    padding: 10px;
+}
 .fileSpecs{
     line-height: 25px;
+    font-size: 12px;
 }
 .descLbl{
     margin-bottom: 1rem;
@@ -158,6 +165,7 @@
 
 #cletter, #ppt, #brochure, #isocertificate{
     margin-top: 1rem;
+    font-size: 12px;
 }
 /* Documentation end*/
 
@@ -220,7 +228,10 @@
 }
 .docContainer{
     display: flex;
-    gap: 20px;
+    /* gap: 20px; */
+}
+.itemDoc{
+    width: 25%;
 }
 
 #billRow{
