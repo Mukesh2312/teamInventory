@@ -1,0 +1,7 @@
+#qtTable, #qtTableHead, .qtTableheadRow, .qtTableth{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.qtTableth{
+    padding: 5px 10px;
+}

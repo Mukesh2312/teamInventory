@@ -2,12 +2,13 @@ import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import stl from "../css/CreateQuotationPage.module.css";
 
 const CreateQuotationPage = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-blue-100 min-h-screen flex items-center justify-center p-6">
-      <div className="bg-white w-full max-w-4xl p-8 rounded-lg shadow-lg relative">
+      <div className="bg-white w-full px-5">
         {/* Header */}
         <div className="mb-6">
           <h2 className="text-2xl font-bold items-center ">Create</h2>
@@ -138,111 +139,43 @@ const CreateQuotationPage = () => {
           </div>
         </div>
 
-        <h2 className="font-extrabold mb-5 fon- ">Quotatio Details </h2>
-        <table className="min-w-full border-collapse border border-gray-300">
-          <thead>
-            <tr>
-              <th className="px-4 py-2 border border-gray-300">Item No</th>
-              <th className="px-4 py-2 border border-gray-300">Quantity</th>
-              <th className="px-4 py-2 border border-gray-300">Unit Price</th>
-              <th className="px-4 py-2 border border-gray-300">Discount %</th>
-              <th className="px-4 py-2 border border-gray-300">Discount AMT</th>
-              <th className="px-4 py-2 border border-gray-300">
-                SGST <br /> Rate (%) | Amt (Rs)
+        <h2>Quotatio Details </h2>
+        <table id={stl.qtTable}>
+          <thead id={stl.qtTableHead}>
+            <tr className={stl.qtTableheadRow}>
+              <th rowSpan="2" className={stl.qtTableth}>
+                Item No
               </th>
-              <th className="px-4 py-2 border border-gray-300">
-                CGST <br /> Rate (%) | Amt (Rs)
+              <th rowSpan="2" className={stl.qtTableth}>
+                Quantity
               </th>
-              <th className="px-4 py-2 border border-gray-300">
-                IGST <br /> Rate (%) | Amt (Rs)
+              <th rowSpan="2" className={stl.qtTableth}>
+                Unit Price
               </th>
-              <th className="px-4 py-2 border border-gray-300">Total</th>
+              <th rowSpan="2" className={stl.qtTableth}>
+                Discount %
+              </th>
+              <th rowSpan="2" className={stl.qtTableth}>
+                Discount AMT
+              </th>
+              <th colSpan="2" className={stl.qtTableth}>
+                SGST
+              </th>
+              <th colSpan="2" className={stl.qtTableth}>
+                CGST
+              </th>
+              <th rowSpan="2" className={stl.qtTableth}>
+                Total
+              </th>
+            </tr>
+            <tr className={stl.qtTableheadRow}>
+              <th className={stl.qtTableth}>Rate %</th>
+              <th className={stl.qtTableth}>Amt.(Rs)</th>
+              <th className={stl.qtTableth}>Rate %</th>
+              <th className={stl.qtTableth}>Amt.(Rs)</th>
             </tr>
           </thead>
-          <tbody>
-            {[...Array(4)].map((_, index) => (
-              <tr key={index} className="text-center">
-                <td className="px-4 py-2 border border-gray-300">
-                  <select className="w-full p-1 border border-gray-300 rounded-md focus:outline-none"></select>
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <input
-                    type="number"
-                    className="w-full p-1 border border-gray-300 rounded-md focus:outline-none"
-                  />
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <input
-                    type="number"
-                    className="w-full p-1 border border-gray-300 rounded-md focus:outline-none"
-                  />
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <input
-                    type="number"
-                    className="w-full p-1 border border-gray-300 rounded-md focus:outline-none"
-                  />
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <input
-                    type="text"
-                    className="w-full p-1 border border-gray-300 rounded-md focus:outline-none"
-                    readOnly
-                    value="0.00"
-                  />
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <div className="flex flex-col">
-                    <input
-                      type="number"
-                      className="w-full p-1 border-b border-gray-300 focus:outline-none"
-                      placeholder="Rate (%)"
-                    />
-                    <input
-                      type="number"
-                      className="w-full p-1 border-t border-gray-300 focus:outline-none"
-                      placeholder="Amt (Rs)"
-                    />
-                  </div>
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <div className="flex flex-col">
-                    <input
-                      type="number"
-                      className="w-full p-1 border-b border-gray-300 focus:outline-none"
-                      placeholder="Rate (%)"
-                    />
-                    <input
-                      type="number"
-                      className="w-full p-1 border-t border-gray-300 focus:outline-none"
-                      placeholder="Amt (Rs)"
-                    />
-                  </div>
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <div className="flex flex-col">
-                    <input
-                      type="number"
-                      className="w-full p-1 border-b border-gray-300 focus:outline-none"
-                      placeholder="Rate (%)"
-                    />
-                    <input
-                      type="number"
-                      className="w-full p-1 border-t border-gray-300 focus:outline-none"
-                      placeholder="Amt (Rs)"
-                    />
-                  </div>
-                </td>
-                <td className="px-4 py-2 border border-gray-300">
-                  <input
-                    type="number"
-                    className="w-full p-1 border border-gray-300 rounded-md focus:outline-none"
-                    readOnly
-                  />
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>

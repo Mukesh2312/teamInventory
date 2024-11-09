@@ -163,7 +163,7 @@
     text-align: left;
 }
 
-#cletter, #ppt, #brochure, #isocertificate{
+#coveringLetter, #pptAvailable, #productBrochure, #isoCertificate{
     margin-top: 1rem;
     font-size: 12px;
 }
@@ -237,11 +237,16 @@
 #billRow{
     display: flex;
 }
+#addProductTblHead, .addProductTblth, .addProductTbltd{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 #addProductBillTable tr{
     margin-bottom: 10px;
 }
 #addProductBillTable td{
     text-align: center;
+    padding: 5px;
 }
 #apliTx{
     display: flex;
@@ -250,11 +255,22 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
+    /* border: 1px solid black;
+    border-collapse: collapse; */
+}
+#txPartition th{
+ border: none;
+ margin-top: 6px;
+
 }
 #txAmtPartition{
     display: flex;
     justify-content: space-around;
+    border: none;
     /* text-align: center; */
+}
+#txAmtPartition td{
+    border: none;
 }
 #billRow{
     margin-top: 1rem;

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import stl from "./PurchaseOrder.module.css";
 import PlusCirleIcon from "../../IconComponents/PlusCircleIcon";
 import SearchIcon from "../../IconComponents/SearchIcon";
@@ -8,6 +9,15 @@ import ThreeDot from "../../IconComponents/ThreeDot";
 import { Link } from "react-router-dom";
 
 function PurchaseOrder() {
+  const [purchaseData, setPurchaseData] = useState([]);
+
+  const getPurchaseData = async () => {
+    try {
+      const res = await axios.get('')
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div id={stl.purchaseOrder}>

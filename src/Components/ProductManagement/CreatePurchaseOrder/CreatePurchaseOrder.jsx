@@ -75,7 +75,7 @@ function CreatePurchaseOrder() {
                   <label htmlFor="cname" className={stl.plbl}>
                     Client Name
                   </label>
-                  <select name="cname" id="cname">
+                  <select name="cname" id="cname" className={stl.selectClient}>
                     <option value="Client1">Client1</option>
                     <option value="Client2">Client2</option>
                     <option value="Client3">Client3</option>
@@ -98,7 +98,11 @@ function CreatePurchaseOrder() {
                 <p id={stl.secondHeadCol}>Ship & Bill to Address</p>
                 <div className={stl.purchaseInputInner}>
                   <label htmlFor="customerName">Customer Name :</label>
-                  <select name="customerName" id="customerName">
+                  <select
+                    name="customerName"
+                    id="customerName"
+                    className={stl.selectClient}
+                  >
                     <option value="customer1">Customer1</option>
                     <option value="customer2">Customer2</option>
                     <option value="customer3">Customer3</option>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import stl from "./AddProduct.module.css";
 import CloseIcon from "../../IconComponents/CloseIcon";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,17 +15,55 @@ const AddProduct = () => {
     skuCode: "",
     amcCmc: "",
     companyName: "",
-    availableModelNos: "Autofill",
+    availableModelNos: "",
     proposedCompany: "",
     hsnSacCode: "",
     warranty: "",
     expiryDate: "",
-    amcStartDate: "",
-    amcEndDate: "",
+    amcValidityStartDate: "",
+    amcValidityEndDate: "",
     productDescription: "",
-    productImage: null,
+    price: "",
+    companyPrice: "",
+    applicableTaxes: "",
+    quantityUnit: "",
+    lastPurchase: "",
+    itemGroup: "",
+    code: "",
+    name: "",
+    productImage: "",
+    productBrochure: "",
+    pptAvailable: "",
+    coveringLetter: "",
+    isoCertificate: "",
   });
+
+  const [totalBillAmount, setTotalBillAmount] = useState(null);
+  const [amount, setAmount] = useState(null);
+  const [taxAmount, setTextAmout] = useState(null);
+  const [applicableGST, setApplicableGST] = useState([12, 15, 18]);
+
   const navigate = useNavigate();
+
+  // tax and amount calculation
+  const calculateTaxAmount = (e) => {
+    const taxRate = e.target.value;
+
+    console.log("Unit Price:", formData.companyPrice);
+    console.log("Quantity:", formData.quantityUnit);
+
+    const totalTaxAmount = Math.floor(
+      formData.companyPrice * formData.quantityUnit * (taxRate / 100)
+    );
+    console.log("Total Tax Amount:", totalTaxAmount);
+
+    const netAmount =
+      formData.companyPrice * formData.quantityUnit + totalTaxAmount;
+    setTextAmout(totalTaxAmount);
+
+    setAmount(netAmount);
+    setTotalBillAmount(netAmount); // Assumes you want to store only the tax amount
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,6 +83,11 @@ const AddProduct = () => {
     console.log("pop up triggered");
   };
 
+  // sending product to api
+
+  const handleProduct = () => {
+    const formData = new FormData();
+  };
   return (
     <>
       {popUP && <SuccessfullyAddedPopup setPopUp={setPopUp} />}
@@ -64,8 +108,8 @@ const AddProduct = () => {
             <form>
               <div id={stl.headRow}>
                 <div className={stl.formItems}>
-                  <label htmlfor="srno">SR No. :</label>
-                  <input type="text" name="srno" id={stl.srno} />
+                  <label htmlfor="srNo">SR No. :</label>
+                  <input type="text" name="srNo" id={stl.srNo} />
                 </div>
                 <div className={stl.formItems}>
                   <label htmlfor="pdate">Date :</label>
@@ -75,10 +119,10 @@ const AddProduct = () => {
               <div id={stl.belowHeadRow}>
                 <div id={stl.firstcol}>
                   <div className={stl.formItems}>
-                    <label htmlfor="pname" className={stl.lbl}>
+                    <label htmlfor="productName" className={stl.lbl}>
                       Product Name:
                     </label>
-                    <select name="pname" id={stl.pname}>
+                    <select name="pname" id={stl.productName}>
                       <option value="dell">Dell</option>
                       <option value="hp">HP</option>
                       <option value="lenovo">Lenovo</option>
@@ -86,10 +130,10 @@ const AddProduct = () => {
                     </select>
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="pmodal" className={stl.lbl}>
-                      Modal :
+                    <label htmlfor="model" className={stl.lbl}>
+                      Model :
                     </label>
-                    <select name="pmodal" id="pmodal">
+                    <select name="pmodal" id={stl.model}>
                       <option value="dell">Dell</option>
                       <option value="hp">HP</option>
                       <option value="lenovo">Lenovo</option>
@@ -97,10 +141,10 @@ const AddProduct = () => {
                     </select>
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="ptype" className={stl.lbl}>
+                    <label htmlfor="productType" className={stl.lbl}>
                       Product Type :
                     </label>
-                    <select name="ptype" id={stl.ptype}>
+                    <select name="productType" id={stl.productType}>
                       <option value="dell">Dell</option>
                       <option value="hp">HP</option>
                       <option value="lenovo">Lenovo</option>
@@ -108,16 +152,16 @@ const AddProduct = () => {
                     </select>
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="pcode" className={stl.lbl}>
+                    <label htmlfor="skuCode" className={stl.lbl}>
                       SKU Code :
                     </label>
-                    <input type="text" name="pcode" id={stl.pcode} />
+                    <input type="text" name="skuCode" id={stl.skuCode} />
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="pmc" className={stl.lbl}>
+                    <label htmlfor="amcCmc" className={stl.lbl}>
                       AMC/CMC :
                     </label>
-                    <select name="pmc" id={stl.pmc}>
+                    <select name="amcCmc" id={stl.amcCmc}>
                       <option value="dell">Dell</option>
                       <option value="hp">HP</option>
                       <option value="lenovo">Lenovo</option>
@@ -126,37 +170,53 @@ const AddProduct = () => {
                   </div>
                   <div className={stl.formItems} id={stl.amcDuration}>
                     <div>
-                      <label htmlfor="amcstart" className={stl.lbl}>
+                      <label htmlfor="amcValidityStartDate" className={stl.lbl}>
                         Start Date :
                       </label>
-                      <input type="date" name="amcstart" id={stl.amcstart} />
+                      <input
+                        type="date"
+                        name="amcValidityStartDate"
+                        id={stl.amcValidityStartDate}
+                      />
                     </div>
                     <div>
-                      <label htmlfor="amcend" className={stl.lbl}>
+                      <label htmlfor="amcValidityEndDate" className={stl.lbl}>
                         End Date :
                       </label>
-                      <input type="date" name="amcend" id={stl.amcend} />
+                      <input
+                        type="date"
+                        name="amcValidityEndDate"
+                        id={stl.amcValidityEndDate}
+                      />
                     </div>
                   </div>
                 </div>
                 <div id={stl.secondCol}>
                   <div className={stl.formItems}>
-                    <label htmlfor="cname" className={stl.lbl}>
+                    <label htmlfor="companyName" className={stl.lbl}>
                       Company Name
                     </label>
-                    <input type="text" name="cname" id={stl.cname} />
+                    <input
+                      type="text"
+                      name="companyName"
+                      id={stl.companyName}
+                    />
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="nos" className={stl.lbl}>
+                    <label htmlfor="availableModelNos" className={stl.lbl}>
                       Available Model nos :
                     </label>
-                    <input type="text" name="nos" id={stl.nos} />
+                    <input
+                      type="text"
+                      name="availableModelNos"
+                      id={stl.availableModelNos}
+                    />
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="prscmnpy" className={stl.lbl}>
+                    <label htmlfor="proposedCompany" className={stl.lbl}>
                       Proposed Company:
                     </label>
-                    <select name="prscmnpy" id={stl.prscmnpy}>
+                    <select name="proposedCompany" id={stl.proposedCompany}>
                       <option value="dell">Dell</option>
                       <option value="hp">HP</option>
                       <option value="lenovo">Lenovo</option>
@@ -164,46 +224,50 @@ const AddProduct = () => {
                     </select>
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="sac" className={stl.lbl}>
+                    <label htmlfor="hsnSacCode" className={stl.lbl}>
                       HSN/SAC Code :
                     </label>
-                    <input type="text" name="sac" id={stl.sac} />
+                    <input type="text" name="hsnSacCode" id={stl.hsnSacCode} />
                   </div>
                   <div className={stl.formItems}>
                     <label htmlfor="warranty" className={stl.lbl}>
                       Warranty :
                     </label>
-                    <input type="text" name="warranty" id={stl.sac} />
+                    <input type="text" name="warranty" id={stl.warranty} />
                   </div>
                   <div className={stl.formItems}>
-                    <label htmlfor="expiry" className={stl.lbl}>
+                    <label htmlfor="expiryDate" className={stl.lbl}>
                       Expiry Date :
                     </label>
-                    <input type="text" name="expiry" id={stl.expiry} />
+                    <input type="text" name="expiryDate" id={stl.expiryDate} />
                   </div>
                 </div>
               </div>
               <div id={stl.descRow}>
                 <div>
                   <div className={stl.descLbl}>
-                    <label htmlFor="pdesc" className={stl.lbl}>
+                    <label htmlFor="productDescription" className={stl.lbl}>
                       Product Description :
                     </label>
                   </div>
                   <textarea
-                    name="pdesc"
-                    id={stl.pdesc}
+                    name="productDescription"
+                    id={stl.productDescription}
                     rows={5}
                     cols={80}
                   ></textarea>
                 </div>
                 <div id={stl.descFileContianer}>
                   <div className={stl.descLbl}>
-                    <label htmlFor="pimg" className={stl.lbl}>
+                    <label htmlFor="productImage" className={stl.lbl}>
                       Product Image :
                     </label>
                   </div>
-                  <input type="file" name="pimg" id={stl.pimg} />
+                  <input
+                    type="file"
+                    name="productImage"
+                    id={stl.productImage}
+                  />
                   <div className={stl.fileSpecs}>
                     <small>Max File Size: 5 MB</small>
                     <br />
@@ -216,30 +280,33 @@ const AddProduct = () => {
                 <div id={stl.productPricing}>
                   <div>
                     <div>
-                      <label htmlfor="quant" className={stl.lbl}>
+                      <label htmlfor="quantityUnit" className={stl.lbl}>
                         Quantity :
                       </label>
                     </div>
                     <input
-                      type="text"
-                      name="quant"
-                      id={stl.quant}
+                      type="number"
+                      name="quantityUnit"
+                      id={stl.quantityUnit}
                       className={stl.pnp}
                       placeholder="Qautity"
+                      onChange={handleChange}
+                      value={formData.quantityUnit}
                     />
                   </div>
                   <div>
                     <div>
-                      <label htmlfor="cprice" className={stl.lbl}>
+                      <label htmlfor="companyPrice" className={stl.lbl}>
                         Company Price :
                       </label>
                     </div>
                     <input
-                      type="text"
-                      name="cprice"
-                      id={stl.cprice}
+                      type="number"
+                      name="companyPrice"
+                      id={stl.companyPrice}
                       className={stl.pnp}
-                      placeholder="Price"
+                      onChange={handleChange}
+                      value={formData.companyPrice}
                     />
                   </div>
                   <div>
@@ -248,11 +315,15 @@ const AddProduct = () => {
                         Applicable GST :
                       </label>
                     </div>
-                    <select name="gst" id="gst" className={stl.pnp}>
-                      <option value="">None</option>
-                      <option value="hp">HP</option>
-                      <option value="lenovo">Lenovo</option>
-                      <option value="acer">Acer</option>
+                    <select
+                      name="gst"
+                      id="gst"
+                      className={stl.pnp}
+                      onChange={calculateTaxAmount}
+                    >
+                      {applicableGST.map((item) => (
+                        <option value={item}>{item}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
@@ -261,10 +332,14 @@ const AddProduct = () => {
                 <p>Documentation</p>
                 <div className={stl.docContainer}>
                   <div className={stl.itemDoc}>
-                    <label htmlFor="brochure" className={stl.lbl}>
+                    <label htmlFor="productBrochure" className={stl.lbl}>
                       Product Brochure :
                     </label>
-                    <input type="file" id={stl.brochure} name="brochure" />
+                    <input
+                      type="file"
+                      id={stl.productBrochure}
+                      name="productBrochure"
+                    />
                     <div className={stl.fileSpecs}>
                       <small>Max File Size: 5 MB</small>
                       <br />
@@ -274,10 +349,14 @@ const AddProduct = () => {
                     </div>
                   </div>
                   <div className={stl.itemDoc}>
-                    <label htmlFor="ppt" className={stl.lbl}>
+                    <label htmlFor="pptAvailable" className={stl.lbl}>
                       PPT Available :
                     </label>
-                    <input type="file" id={stl.ppt} name="ppt" />
+                    <input
+                      type="file"
+                      id={stl.pptAvailable}
+                      name="pptAvailable"
+                    />
                     <div className={stl.fileSpecs}>
                       <small>Max File Size: 5 MB</small>
                       <br />
@@ -287,10 +366,14 @@ const AddProduct = () => {
                     </div>
                   </div>
                   <div className={stl.itemDoc}>
-                    <label htmlFor="cletter" className={stl.lbl}>
+                    <label htmlFor="coveringLetter" className={stl.lbl}>
                       Covering Latter :
                     </label>
-                    <input type="file" id={stl.cletter} name="cletter" />
+                    <input
+                      type="file"
+                      id={stl.coveringLetter}
+                      name="coveringLetter"
+                    />
                     <div className={stl.fileSpecs}>
                       <small>Max File Size: 5 MB</small>
                       <br />
@@ -300,10 +383,14 @@ const AddProduct = () => {
                     </div>
                   </div>
                   <div className={stl.itemDoc}>
-                    <label htmlFor="isocertificate" className={stl.lbl}>
+                    <label htmlFor="isoCertificate" className={stl.lbl}>
                       ISO Certificate :
                     </label>
-                    <input type="file" id={stl.isocertificate} name="cletter" />
+                    <input
+                      type="file"
+                      id={stl.isoCertificate}
+                      name="isoCertificate"
+                    />
                     <div className={stl.fileSpecs}>
                       <small>Max File Size: 5 MB</small>
                       <br />
@@ -362,87 +449,101 @@ const AddProduct = () => {
                 <div id={stl.costSummary}>
                   <div id={stl.billRow}>
                     <table id={stl.addProductBillTable}>
-                      <thead>
+                      <thead id={stl.addProductTblHead}>
                         <tr>
-                          <th>Quantity</th>
-                          <th>MRP</th>
-                          <th>
-                            Applicable Taxes
-                            <tr id={stl.txPartition}>
-                              <th>
-                                <small>Rate(%)</small>
-                              </th>
-                              <th>
-                                <small>Amt(%)</small>
-                              </th>
-                            </tr>
+                          <th rowSpan="2" className={stl.addProductTblth}>
+                            Quantity
                           </th>
-                          <th>Amount</th>
+                          <th rowSpan="2" className={stl.addProductTblth}>
+                            MRP
+                          </th>
+                          <th colSpan="2" className={stl.addProductTblth}>
+                            Applicable Taxes
+                          </th>
+                          <th rowSpan="2" className={stl.addProductTblth}>
+                            Amount
+                          </th>
+                        </tr>
+                        <tr id={stl.txPartition}>
+                          <th>
+                            <small>Rate(%)</small>
+                          </th>
+                          <th>
+                            <small>Amt(%)</small>
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>245</td>
-                          <td>10</td>
-                          <td id={stl.txAmtPartition}>
-                            <td>5</td>
-                            <td>50</td>
+                          <td className={stl.addProductTbltd}>
+                            {formData.quantityUnit}
                           </td>
-                          <td>456</td>
+                          <td className={stl.addProductTbltd}>
+                            {formData.companyPrice}
+                          </td>
+                          <td id={stl.txAmtPartition}>
+                            <td className={stl.addProductTbltd}>
+                              {formData.companyPrice}
+                            </td>
+                            <td className={stl.addProductTbltd}>{taxAmount}</td>
+                          </td>
+                          <td colSpan="2" className={stl.addProductTbltd}>
+                            {amount}
+                          </td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+              <div id={stl.approvedBy}>
+                <div id={stl.approveInner}>
+                  <p>Approved By :</p>
+                  <p>
+                    <strong>Mayur Bansal</strong>
+                  </p>
+                  <p>
+                    <strong>Purchased Manager Unisol</strong>
+                  </p>
+                </div>
+                <div id={stl.netamount}>
+                  <div id={stl.netamountInner}>
+                    <div className={stl.netItem}>
+                      <p>Subtotal</p>
+                      <p>{amount}</p>
+                    </div>
+                    <div className={stl.netItem}>
+                      <p>Freight</p>
+                      <p>000</p>
+                    </div>
+                    <div className={stl.netItem}>
+                      <p>Tasex</p>
+                      <p>000</p>
+                    </div>
+                    <div className={stl.netItem}>
+                      <p>
+                        <strong> Net Amount</strong>
+                      </p>
+                      <p>{totalBillAmount}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className={stl.formBtnContainer}>
+                {/* <Link onClick={() => (navigate(-1))}> */}
+                <button type="submit" onClick={handlerclick}>
+                  Update
+                </button>
+
+                {/* </Link> */}
+                <Link onClick={() => navigate(-1)}>
+                  <button>Cancel</button>
+                </Link>
+              </div>
             </form>
           </div>
 
-          <div id={stl.approvedBy}>
-            <div id={stl.approveInner}>
-              <p>Approved By :</p>
-              <p>
-                <strong>Mayur Bansal</strong>
-              </p>
-              <p>
-                <strong>Purchased Manager Unisol</strong>
-              </p>
-            </div>
-            <div id={stl.netamount}>
-              <div id={stl.netamountInner}>
-                <div className={stl.netItem}>
-                  <p>Subtotal</p>
-                  <p>000</p>
-                </div>
-                <div className={stl.netItem}>
-                  <p>Freight</p>
-                  <p>000</p>
-                </div>
-                <div className={stl.netItem}>
-                  <p>Tasex</p>
-                  <p>000</p>
-                </div>
-                <div className={stl.netItem}>
-                  <p>
-                    <strong> Net Amount</strong>
-                  </p>
-                  <p>000</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={stl.formBtnContainer}>
-            {/* <Link onClick={() => (navigate(-1))}> */}
-            <button type="submit" onClick={handlerclick}>
-              Update
-            </button>
-
-            {/* </Link> */}
-            <Link onClick={() => navigate(-1)}>
-              <button>Cancel</button>
-            </Link>
-          </div>
           <div className={stl.editBtn}>
             <button>Edit</button>
           </div>
